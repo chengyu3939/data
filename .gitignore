@@ -26,3 +26,4 @@ data-mongodb/target/generated-test-sources/
 data-mybatis/target/generated-sources/
 data-mybatis/target/generated-test-sources/
 /.idea/
+/.idea/workspace.xml
