@@ -1,0 +1,8 @@
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/DataSourceFactory.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/DataSourceDTO.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/App.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/DbContextHolder.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/DuridConstant.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/SplitRoutingDataSource.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/DataSourceEnum.java
+/Users/mark/code/data/data-mybatis/src/main/java/com/mark/data/durid/MybatisConfiguration.java
