@@ -20,7 +20,7 @@ public class SplitRoutingDataSource extends AbstractRoutingDataSource {
 
         if (DbContextHolder.getDbType()==null) {
 
-            dataSourceEnum = DataSourceEnum.MANAGER_MASTER_DB;
+            dataSourceEnum = DataSourceEnum.defaultDataSourceEnum;
 
         }else {
             dataSourceEnum=DbContextHolder.getDbType();

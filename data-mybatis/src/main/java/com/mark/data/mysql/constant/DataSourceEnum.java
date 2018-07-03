@@ -1,14 +1,18 @@
 package com.mark.data.mysql.constant;
 
-import com.mark.data.mysql.constant.DbConstant;
-
 /**
  * @author mark
  */
 
 public enum DataSourceEnum {
-    MANAGER_MASTER_DB("manager", DbConstant.DB_TYPE_MASTER, "manager-master-db"),
-    MANAGER_SLAVE_DB("manager", DbConstant.DB_TYPE_SLAVE, "manager-master-db");
+
+    MANAGER_MASTER_DB("manager", Constant.DB_TYPE_MASTER, "manager-master-db"),
+    MANAGER_SLAVE_DB("manager", Constant.DB_TYPE_SLAVE, "manager-master-db");
+
+    /**
+     * 选对默认数据源
+     */
+    public static  DataSourceEnum defaultDataSourceEnum=DataSourceEnum.MANAGER_MASTER_DB;
 
     private String dbName;
     private String dbType;
@@ -19,6 +23,10 @@ public enum DataSourceEnum {
         this.dbType = dbType;
         this.dbDes = dbDes;
     }
+
+
+
+
 
     public String getDbName() {
         return dbName;
@@ -43,4 +51,7 @@ public enum DataSourceEnum {
     public void setDbDes(String dbDes) {
         this.dbDes = dbDes;
     }
+
+
+
 }

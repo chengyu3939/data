@@ -83,7 +83,7 @@ public class MybatisConfiguration extends MybatisAutoConfiguration {
         proxy.setTargetDataSources(targetDataResources);
         // TODO: 2018/4/15 默认数据源设置方案 目前随意设置
         //设置默认的数据源
-        proxy.setDefaultTargetDataSource(targetDataResources.get(0));
+        proxy.setDefaultTargetDataSource(DataSourceEnum.defaultDataSourceEnum);
         proxy.afterPropertiesSet();//将target数据源中间取出ThreadHolder中配置的数据源
         return proxy;
     }

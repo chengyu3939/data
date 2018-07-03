@@ -25,7 +25,7 @@ public class PropertiesUtil {
      */
     public static Properties load(String profileName) {
         Properties props;
-        logger.info("开始加载properties文件内容.......");
+        logger.info("开始加载properties:{}文件内容.......",profileName);
         props = new Properties();
         InputStream in = null;
         try {
@@ -44,7 +44,7 @@ public class PropertiesUtil {
                 logger.error("jdbc.properties文件流关闭出现异常");
             }
         }
-        logger.info("加载properties文件内容完成...........");
+        logger.info("加载properties文件内容完成... properties:{}",props);
         return props;
     }
 }
