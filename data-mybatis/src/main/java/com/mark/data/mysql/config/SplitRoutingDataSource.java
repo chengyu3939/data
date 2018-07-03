@@ -1,9 +1,13 @@
-package com.mark.data.durid;
+package com.mark.data.mysql.config;
 
+import com.mark.data.mysql.constant.DataSourceEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
+/**
+ * @author mark
+ */
 public class SplitRoutingDataSource extends AbstractRoutingDataSource {
 
 

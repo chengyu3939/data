@@ -1,13 +1,12 @@
-package com.mark.data.durid;
+package com.mark.data.mysql.config;
 
 
+import com.mark.data.mysql.constant.DataSourceEnum;
+import com.mark.data.mysql.util.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 import java.util.Set;
 
@@ -19,6 +18,11 @@ import java.util.Set;
 public class DataSourceFactory {
     private static final Logger logger = LoggerFactory.getLogger(DataSourceFactory.class);
     private static Properties props;
+
+
+    static {
+        props = PropertiesUtil.load("dataSource.properties");
+    }
 
     public static DriverManagerDataSource get(DataSourceEnum em) {
         //补充配置文件配置的properties配置
@@ -41,18 +45,11 @@ public class DataSourceFactory {
      * @param em
      */
     private static Properties initConnectionProperties(DataSourceEnum em) {
-
         try {
-
-
             Properties dataSourceConnProperties = new Properties();
             //默认加载项
             initDefaultProperties(dataSourceConnProperties);
 
-            //用配置文件的配置项覆盖默认配置
-            if (null == props) {
-                loadProps();
-            }
             Set<String> names = props.stringPropertyNames();
             for (String str : names) {
 
@@ -64,7 +61,6 @@ public class DataSourceFactory {
                 }
             }
             return dataSourceConnProperties;
-
         } catch (Exception ex) {
             logger.error("初始化配置文件异常");
             throw ex;
@@ -89,36 +85,7 @@ public class DataSourceFactory {
     }
 
 
-    //配置文件读取操作
-
-    synchronized static private void loadProps() {
-        logger.info("开始加载properties文件内容.......");
-        props = new Properties();
-        InputStream in = null;
-        try {
-            in = DataSourceFactory.class.getClassLoader().getResourceAsStream("dataSource.properties");
-            props.load(in);
-        } catch (FileNotFoundException e) {
-            logger.error("jdbc.properties文件未找到");
-        } catch (IOException e) {
-            logger.error("出现IOException");
-        } finally {
-            try {
-                if (null != in) {
-                    in.close();
-                }
-            } catch (IOException e) {
-                logger.error("jdbc.properties文件流关闭出现异常");
-            }
-        }
-        logger.info("加载properties文件内容完成...........");
-    }
-
     private static String getProperty(String key) {
-        if (null == props) {
-            loadProps();
-        }
-
         String value = props.getProperty(key);
         logger.info("读取配置 key：{}, value:{}", key, value);
         return value;

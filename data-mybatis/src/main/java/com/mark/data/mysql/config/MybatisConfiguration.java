@@ -1,5 +1,6 @@
-package com.mark.data.durid;
+package com.mark.data.mysql.config;
 
+import com.mark.data.mysql.constant.DataSourceEnum;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;

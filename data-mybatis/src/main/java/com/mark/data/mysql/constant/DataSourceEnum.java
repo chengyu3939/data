@@ -1,7 +1,12 @@
-package com.mark.data.durid;
+package com.mark.data.mysql.constant;
+
+import com.mark.data.mysql.constant.DbConstant;
+
+/**
+ * @author mark
+ */
 
 public enum DataSourceEnum {
-
     MANAGER_MASTER_DB("manager", DbConstant.DB_TYPE_MASTER, "manager-master-db"),
     MANAGER_SLAVE_DB("manager", DbConstant.DB_TYPE_SLAVE, "manager-master-db");
 
