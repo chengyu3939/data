@@ -6,8 +6,8 @@ package com.mark.data.mysql.constant;
 
 public enum DataSourceEnum {
 
-    MANAGER_MASTER_DB("manager", Constant.DB_TYPE_MASTER, "manager-master-db"),
-    MANAGER_SLAVE_DB("manager", Constant.DB_TYPE_SLAVE, "manager-master-db");
+    MANAGER_MASTER_DB("manager", Constant.MASTER, "manager-master-db"),
+    MANAGER_SLAVE_DB("manager", Constant.SLAVE, "manager-master-db");
 
     /**
      * 选对默认数据源
